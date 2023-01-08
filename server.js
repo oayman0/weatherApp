@@ -25,7 +25,8 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-
+//Initalize the main project folder
+app.use(express.static('website'));
 
 const port=8000;
 /** 
