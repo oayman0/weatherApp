@@ -37,3 +37,26 @@ const port=8000;
  * } 
 */
 const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`)});
+
+
+/* Empty JS object to act as endpoint for all routes */
+projectData = {};
+
+//Route, HTTP GET Request
+app.get("/all",function(request,response){
+    response.send(projectData);
+});
+/**
+ *  
+ * app.get('/all', (request, response)=> {
+ * response.send(projectData);
+ * });
+ * 
+ */
+
+/** 
+ * app.get('/all', sendData);
+ * function sendData (request, response) {
+ * response.send(projectData);
+ * };
+ */
