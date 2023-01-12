@@ -40,11 +40,14 @@ const server = app.listen(port, ()=>{console.log(`running on localhost: ${port}`
 
 
 /* Empty JS object to act as endpoint for all routes */
-projectData = {};
+const projectData = {a:20};
 
 //Route, HTTP GET Request
-app.get("/all",function(request,response){
+app.get("/all", function (request, response){
     response.send(projectData);
+    // console.log(request);
+ 
+    console.log(response);
 });
 /**
  *  
@@ -60,3 +63,15 @@ app.get("/all",function(request,response){
  * response.send(projectData);
  * };
  */
+
+const data = [];
+// POST method route
+  app.post('/addMovie', addMovie );
+
+  function addMovie (req, res){
+    // console.log(req.body);
+    //store in the array
+    data.push(req.body);
+    console.log(data);
+
+ }
